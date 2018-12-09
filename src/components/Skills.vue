@@ -4,7 +4,7 @@
       <ul>
         <li v-for="(data, index) in skills" :key="index">{{index}} -> {{data.skill}}</li>
       </ul>
-      <div v-bind:class="{ alert: showAlert, 'another-class' : showClass}"></div>
+      <div v-bind:class="alertObject"></div>
     </div>
   </div>
 </template>
@@ -15,8 +15,10 @@ export default {
   data() {
     return {
       skills: [{ skill: "Vue.js" }, { skill: "Frontend Developer" }],
-      showAlert: true,
-      showClass: true
+      alertObject: {
+        alert: true,
+        "another-class": true
+      }
     };
   }
 };
