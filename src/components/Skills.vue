@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
     {{name}}
-    <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
+    {{ btnState ? "The button is disabled !" : "The button is enabled !"}}
+    <button
+      v-on:click="changeName"
+      v-bind:disabled="btnState"
+    >Change Name</button>
   </div>
 </template>
 
